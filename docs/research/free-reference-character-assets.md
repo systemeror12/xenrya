@@ -93,3 +93,54 @@ The Xenrya repository is MIT-licensed; the character remains under its own asset
 ## Suggested next decision
 
 Do not commit an asset from this research note yet. First open the ranked previews and select the desired visual direction. Then verify the selected archive's actual file list, animation frame counts/timing, included license/readme, and SHA-256 hash. On the evidence available without downloading, **Pixel Penguin 32x32** is the best visual/technical balance, while **Alex's 16x16 Character** is the lowest-risk runtime integration candidate.
+
+## Follow-up — Hatsune Miku-like direction and rights check (2026-09-20)
+
+This section reopens the research for the requested Hatsune Miku-like visual direction. It is a licensing decision record, not an asset selection. No asset was downloaded or selected.
+
+### Official Hatsune Miku check
+
+**Conclusion: no official Hatsune Miku pixel/chibi asset was found with published terms that are compatible with an MIT-licensed Xenrya source repository and packaged binaries. Do not use an official Miku image or an unverified fan sprite for Phase 0.** A written permission from Crypton Future Media and any other relevant rights holder would need to expressly cover source-repository redistribution, modification, binary packaging, and downstream use.
+
+The relevant primary sources are:
+
+| Official source | What it says | Xenrya consequence |
+| --- | --- | --- |
+| [Piapro creator FAQ (English)](https://piapro.net/intl/en_for_creators.html) | Original Crypton illustrations of Miku and the other listed characters are offered under **CC BY-NC 3.0**. Copying, adapting, and distributing those original illustrations is limited to noncommercial use and requires the prescribed credit and license link. The FAQ also says adaptations made by other creators cannot be reused without that creator's permission. | CC BY-NC is not a fit for a public MIT application that may be used, packaged, or redistributed commercially. A fan-made Miku sprite is not made reusable merely because it is free to download. |
+| [Piapro Character License (PCL), full text](https://piapro.jp/license/pcl) and [summary](https://piapro.jp/license/pcl/summary) | PCL permits a creator to make and publish their own secondary work under conditions, but it is generally noncommercial, requires visible credit, does not grant a sublicense, and reserves rights not expressly granted. The summary says paid/commercial use must use the separate Piapro Link/contact route. | Xenrya cannot safely place the Miku artwork in an MIT source tree or grant downstream users MIT rights to it. “Open source” and “free download” do not remove the PCL conditions. |
+| [Piapro character guideline](https://piapro.jp/license/character_guideline) | The guideline covers Miku and the other Crypton characters. It requires PCL credit, restricts uses outside the guideline, says corporations and uses beyond hobby/school scale need a separate contract, and specifically excludes games and smartphone apps from one of its narrow paid electronic-distribution exceptions. Its official-image section also limits public distribution of the unmodified official image. | A desktop companion distributed as source and binaries is outside the safe hobby/fan-use assumption. A package containing the official image would need a separate permission that explicitly covers the app and its distribution model. |
+| [Hatsune Miku NT EULA](https://ec.crypton.co.jp/download/pdf/eula_virtualsinger.pdf) | The product license is personal and non-sublicensable, requires compliance with the character guidelines, and does not grant trademark permission. It also restricts distributing the product/components as part of another software product; commercial public distribution requires contacting Crypton. | This EULA is primarily for the voice product, not a standalone art license, but it is an additional reason not to bundle purchased Miku product assets/audio in Xenrya without a separate written license. |
+
+The practical distinction is important: PCL/CC BY-NC may support a fan's noncommercial secondary work in a narrow context, but they do **not** provide the broad permission needed to redistribute a character asset in an MIT-licensed application where users can copy, modify, fork, repackage, and potentially sell the application. Miku's name, trademark, recognisable design, and fan-created derivatives must be treated separately from an ordinary CC0 sprite.
+
+### Safer original anime-style directions
+
+No ready-made asset was found that both visibly presents a teal-haired virtual idol and has sufficiently clear CC0/MIT-compatible provenance. The following are safer starting points for an original Xenrya character: teal hair and an idol palette can be designed or recoloured by Xenrya, while avoiding Miku's name, logo, exact twin-tail silhouette, school-uniform styling, tie, and other recognisable trade dress.
+
+#### Best ready-made anime-style base: [8 Directional Girl Character](https://hormelz.itch.io/8-directional-girl-character)
+
+This creator page labels the pack **CC0**, marks it “No generative AI was used,” credits the original [Mari Character by styloo](https://styloo.itch.io/mari), and provides JSON animation data, GIF previews, and Aseprite files. It lists `Idle`, `Ready Idle`, `Crouch Idle`, and visibly distinct kick/punch/combo attack reactions, alongside movement states; the canvas is 256×256. Recolouring the hair and costume teal and giving the character a new name would produce a distinct original virtual-idol direction without claiming it is Miku.
+
+**Risks:** this is a large, multi-directional 2D base rather than a ready-made desktop companion; pin both provenance pages and the archive hash before use. The source chain is CC0 according to both creator pages, but the archive and included readme still need to be checked.
+
+#### Smallest controllable anime-style route: [Themis-Foundry pixel-sprite-animator](https://github.com/Themis-Foundry/pixel-sprite-animator)
+
+This MIT-licensed project takes an original 32×32 source sprite and generates a breathing idle, a personality/signature frame, a walk cycle, PNG frames, a spritesheet, and a manifest. Its repository states that the demo sprite and code are MIT-licensed and that no AI is used at runtime. Draw a new, distinctly named teal-haired virtual idol as the source, then keep the source and generated files under a compatible Xenrya-owned/MIT notice. This is a creation path rather than a downloadable character, but it gives Xenrya the cleanest rights story and the smallest Phase 0 footprint.
+
+#### Small CC0 anime-style base: [2D Female Character Animated Zenobia](https://opengameart.org/content/2d-female-character-animated-zenobia)
+
+This OpenGameArt page labels the character **CC0** and lists nine animations: idle, four-direction walk, and four-direction attack. The download includes a ZIP and a `license.txt` with Unity slicing notes. It is a stronger anime-style silhouette than the animal/generic candidates, and a teal recolour plus an original outfit/name could establish the requested virtual-idol direction. The page does not provide a no-AI disclosure, and attack is the only clearly distinct reaction, so provenance and visual distinctiveness must be checked before adoption.
+
+#### Minimal CC0 base: [Character Base (16×32px) Male & Female](https://opengameart.org/content/character-base-16x32px-male-female)
+
+The creator labels this base **CC0** and supplies male/female idle, walking, and left/right chopping/mining animations as PNG/ZIP downloads. The chopping/mining pose is a visibly distinct event reaction; recolour the hair teal and add an original idol outfit. The page does not provide a no-AI disclosure and the reaction is action-oriented rather than emotional, so this ranks below the Zenobia and Hormelz bases for the requested look.
+
+#### Optional but poor Phase 0 fit: [Free CC0 Modular Animated Vector Characters 2D](https://rgsdev.itch.io/free-cc0-modular-animated-vector-characters-2d)
+
+This page advertises CC0 modular parts with idle, hit, and death animations and allows recolouring. It is a useful licensing-safe fallback for an original teal-haired design, but the 2048×2048 canvas and roughly 69 MB archive are excessive for a small desktop companion and it is not pixel art.
+
+### Recommendation for issue #5
+
+Close the “actual Hatsune Miku asset” branch as **not compatible on the published terms**. Keep the asset choice open for Phase 0. The recommended direction is an original anime-style character called something other than Miku, built from either the Hormelz CC0 base or a new 32×32 source animated through Themis-Foundry. Zenobia is the strongest ready-made anime-style fallback if a larger, more detailed character is acceptable. Use a teal/cyan palette only as inspiration, and avoid copying Miku-specific branding or silhouette. Before adoption, archive the source/readme, verify the complete license chain, record a SHA-256 hash, and add a third-party notice; do not relabel third-party CC0 material as MIT.
+
+If the product requirement changes to “the actual Hatsune Miku,” pause implementation and obtain written permission from Crypton (and any other rights holder) that explicitly authorises the Xenrya source repository, modified artwork, packaged binaries, and downstream redistribution. The public Piapro/PCL terms are not that permission.
